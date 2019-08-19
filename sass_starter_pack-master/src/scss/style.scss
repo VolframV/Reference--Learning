@@ -1,0 +1,113 @@
+@import 'config';
+@import 'functions';
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: $body-bg;
+    font-family: $main-font;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: $dark-color;
+}
+
+.container{
+    max-width: $container;
+    margin: auto;
+    padding: 0 20px;
+}
+
+header#main-header{
+    padding: 1em;
+    background-color: $primary-color;
+    color: set-text-color($primary-color);
+    h1{
+        font-size: 40px;
+    }
+}
+
+nav#main-nav{
+    background-color: $secondary-color;
+    height: 40px;
+    ul{
+        list-style: none;
+        padding-top: 10px;
+    }
+    li{
+        display: inline;
+    }
+    a{
+        color: #fff;
+        padding-right: 20px;
+
+        &:hover{
+            color: $primary-color;
+        }
+    }
+}
+
+.section{
+    padding: $section-padding;
+    h1{
+        margin-bottom: 30px;
+    }
+}
+
+#section-a{
+    @extend .section;
+    background: $light-color;
+    color: set-text-color($light-color);
+}
+
+#section-b{
+    @extend .section;
+    background: $dark-color;
+    color: set-text-color($dark-color);
+}
+
+.button{
+    padding: 10px 15px;
+}
+.button-a{
+    @extend .button;
+    background: darken($primary-color, 10%);
+    color: set-text-color($primary-color);
+}
+.button-b{
+    @extend .button;
+    background: lighten($secondary-color, 10%);
+    color: set-text-color($secondary-color);
+}
+
+img{
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem 2rem;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    border-bottom: solid 1px $primary-color; 
+    opacity: 0.99;
+    background: $dark-color;
+
+    ul{
+        display: flex;
+    }
+    a{
+        color: $light-color;
+        padding: 0.45rem;
+        margin: 0 0.25rem;
+    }
+}

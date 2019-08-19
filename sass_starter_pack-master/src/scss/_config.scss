@@ -1,0 +1,26 @@
+// Variables
+$body-bg: rgb(234, 240, 243);
+$main-font: 'tahoma';
+
+$primary-color: rgb(45, 82, 104);
+$secondary-color: rgb(18, 49, 61);
+$light-color: rgb(174, 203, 214);
+$dark-color: rgb(24, 53, 71);
+
+$container: 960px;
+$section-padding: 20px;
+
+// function 
+@function set-text-color($color){
+    @if(lightness($color) > 50){
+        @return black;
+    }@else {
+        @return #fff;
+    }
+}
+}
+@mixin set-background($color){
+    background-color: $color;
+    color: set-text-color($color);
+
+}
